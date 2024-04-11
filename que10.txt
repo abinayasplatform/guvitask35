@@ -1,0 +1,22 @@
+10.Delete the products which product price value are 28
+
+
+    db.users.aggregate([
+    {"$group" : { "_id": "$product_price", "count": { "$sum": 1 } } },
+    {"$match": {"_id" :{ "$ne" : null } , "count" : {"$gt": 1} } }, 
+    {"$project": {"name" : "$_id", "_id" : 0} }
+    ])
+
+
+
+
+output:
+
+
+
+{
+  name: 47
+}
+{
+  name: 36
+}

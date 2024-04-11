@@ -1,0 +1,9 @@
+9.Find products which contain product color indigo  and product price 492.00
+
+
+        db.users.find({ $and: [{"product_color": "indigo"}, {"product_price": {$eq: 492.00}}]})
+
+
+output:
+
+Empty 
